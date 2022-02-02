@@ -1,0 +1,44 @@
+[
+  {
+    "uid": "oms-auth-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/auth-service",
+    "script": "dist/main.js"
+  },
+  {
+    "uid": "oms-messaging-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/messaging-service",
+    "script": "dist/main.js"
+  },
+  {
+    "uid": "oms-order-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/order-service",
+    "script": "dist/main.js"
+  },
+  {
+    "uid": "oms-partner-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/partner-service",
+    "script": "dist/main.js"
+  },
+  {
+    "uid": "oms-product-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/product-service",
+    "script": "dist/main.js"
+  },
+  {
+    "uid": "oms-user-service",
+    "append": true,
+    "watch": true,
+    "sourceDir": "/Users/risqiromadhoni/Coding/yummycorp/smart-ordering/backend/user-service",
+    "script": "dist/main.js"
+  }
+]
