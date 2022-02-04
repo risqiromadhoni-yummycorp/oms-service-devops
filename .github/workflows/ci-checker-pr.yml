@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI Checker PR
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on pull request events
+  pull_request:
+    branches:
+      - feature/*
+      - chore/*
+      - hotfix/*
+      - release/*
+
+jobs:
+  init:
+    name: 🍺 Init app on github actions
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['14', '16']
+
+    steps:
+      - name: ☕️ Copy repository
+        uses: actions/checkout@v2
+
+      - name: 🦚 Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 🎉 Init with node
+        run: echo "Hello init project here"
+
+  test:
+    name: 🍺 Testing app on github actions
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['14', '16']
+    needs: init
+
+    steps:
+      - name: ☕️ Copy repository
+        uses: actions/checkout@v2
+
+      - name: 🦚 Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 🎉 Test with node
+        run: echo "Hello Test Code"
