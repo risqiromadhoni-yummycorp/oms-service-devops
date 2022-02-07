@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   mongodb_primary:
-    image: bitnami/mongodb:4.4
+    image: bitnami/mongodb:latest
     container_name: mongodb_primary
     restart: always
     ports:
@@ -15,11 +15,11 @@ services:
       - MONGODB_ADVERTISED_HOSTNAME=mongodb_primary
       - MONGODB_REPLICA_SET_KEY=OjKJSgaPb3
     volumes:
-      - "./data/mongodb/first:/bitnami/mongodb"
+      - "./data/mongodb/primary:/bitnami/mongodb"
     networks:
       - oms_network
   mongodb_secondary:
-    image: bitnami/mongodb:4.4
+    image: bitnami/mongodb:latest
     container_name: mongodb_secondary
     restart: always
     ports:
@@ -33,7 +33,7 @@ services:
       - MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD=${DB_PASS}
       - MONGODB_REPLICA_SET_KEY=OjKJSgaPb3
     volumes:
-      - "./data/mongodb/second:/bitnami/mongodb"
+      - "./data/mongodb/secondary:/bitnami/mongodb"
     depends_on:
       - mongodb_primary
     networks:

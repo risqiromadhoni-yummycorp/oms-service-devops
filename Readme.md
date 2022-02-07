@@ -10,6 +10,10 @@
 2. Install docker and docker compose
 3. (Optional) install forever `npm i -g forever`
 4. You ready to up container with `docker-compose up -d`
+5. Modify your hosts with adding
+   ```txt
+   127.0.0.1   mongodb_primary mongodb_secondary
+   ```
 
 ### Note
 1. 🦚 Mongodb connection
